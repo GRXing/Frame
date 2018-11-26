@@ -10,10 +10,9 @@ public class TestPanel : MonoBehaviour {
         EventManager.RegisterEvent(EventKey.TestRegisterOne, TestOneCallback);
     }
 
-    void TestOneCallback(object _obj)
+    void TestOneCallback(object[] _obj)
     {
-        string t_msg = _obj as string;
-        Debug.LogError(t_msg);
+        Debug.LogError(_obj.Length);
     }
 
     public void OnRegisterOtherEventDelegate()
@@ -22,12 +21,12 @@ public class TestPanel : MonoBehaviour {
         EventManager.RegisterEvent(EventKey.TestRegisterOne, TestTwoCallback);
     }
 
-    void TestTwoCallback(object _obj)
+    void TestTwoCallback(object[] _obj)
     {
         if (_obj != null)
         {
-            int t_msg = (int)_obj;
-            Debug.LogError(t_msg);
+            for (int i = 0; i < _obj.Length;i++ )
+                Debug.LogError(_obj[i].GetType() + " " + _obj[i]);
         }
         else
         {
@@ -35,10 +34,15 @@ public class TestPanel : MonoBehaviour {
         }
     }
 
+    void TestDelegate(string arg1, int arg2, float arg3)
+    {
+
+    }
+
     public void OnSendEventDelegate()
     {
         Debug.Log("send event");
-        EventManager.SendEvent(EventKey.TestRegisterOne,null);
+        EventManager.SendEvent(EventKey.TestRegisterOne,11524,"asd1254",this);
     }
 
     public void OnRemoveEventDelegate()
