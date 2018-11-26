@@ -43,6 +43,9 @@ public class TestPanel : MonoBehaviour {
 
     public void OnRemoveEventDelegate()
     {
-
+        Debug.Log("remove event");
+        EventManager.RemoveEvent(EventKey.TestRegisterOne, TestOneCallback);
+        //EventManager.RemoveAllEvent(EventKey.TestRegisterOne);
+        //EventManager.ClearAllRegister();
     }
 }
