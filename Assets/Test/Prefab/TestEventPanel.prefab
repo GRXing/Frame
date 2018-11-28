@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114275644166476948}
   - component: {fileID: 114792804611225450}
   m_Layer: 5
-  m_Name: TestPanel
+  m_Name: TestEventPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
