@@ -8,12 +8,13 @@ public class UIBase : MonoBehaviour {
 
     public void Inject()
     {
-        Type t_type = this.GetType();
-        //Debug.LogError(t_type);
-        FieldInfo[] t_fields = t_type.GetFields();
+        FieldInfo[] t_fields = this.GetType().GetFields();
         for (int i = 0; i < t_fields.Length; i++)
         {
-            //Debug.LogError(t_fields[i].Name);
+            object[] t_objs = t_fields[i].GetCustomAttributes(typeof(ForbidInject), true);
+            if (t_objs.Length > 0)
+                continue;
+
             Transform t_variable = transform.SearchChild(t_fields[i].Name);
             if (t_variable != null)
             {

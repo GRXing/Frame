@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TestInjectPanel : UIBase {
 
     public Button TestInject_Btn;
+    [ForbidInject]
     public Text TestInject_Text;
     public Image TestInject_Image;
 
