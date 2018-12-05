@@ -23,4 +23,17 @@ public class UIBase : MonoBehaviour {
             }
         }
     }
+
+    public virtual void Show()
+    {
+        if(!this.gameObject.activeSelf)
+            this.gameObject.SetActive(true);
+    }
+
+    public virtual void Hide()
+    {
+        if (this.gameObject.activeSelf)
+            this.gameObject.SetActive(false);
+    }
+
 }

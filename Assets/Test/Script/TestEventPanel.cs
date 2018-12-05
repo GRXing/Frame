@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestEventPanel : MonoBehaviour{
+public class TestEventPanel : UIBase{
 
     public void OnRegisterEventDelegate()
     {
