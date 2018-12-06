@@ -26,8 +26,16 @@ public class UIBase : MonoBehaviour {
 
     public virtual void Show()
     {
-        if(!this.gameObject.activeSelf)
+        if (!this.gameObject.activeSelf)
+        {
+            if (UIManager.UICurrentSiblineIndex == 0)
+                UIManager.UICurrentSiblineIndex = UIManager.Instance.UIParent.childCount - 1;
+            else
+                UIManager.UICurrentSiblineIndex++;
+
+            this.transform.SetSiblingIndex(UIManager.UICurrentSiblineIndex);
             this.gameObject.SetActive(true);
+        }
     }
 
     public virtual void Hide()

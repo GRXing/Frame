@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour {
 
     [SerializeField]GameObject m_uiParentPrefab;
 
+    public static int UICurrentSiblineIndex;
+
     private Transform m_uiParent;
     public Transform UIParent
     {
@@ -34,6 +36,7 @@ public class UIManager : MonoBehaviour {
 
     void Awake()
     {
+        UICurrentSiblineIndex = 0;
         Instance = this;
     }
 
@@ -47,12 +50,21 @@ public class UIManager : MonoBehaviour {
 
     public UIBase GetPanel(string _panelPath)
     {
+        UIBase t_base = null;
         if (m_uiDic.ContainsKey(_panelPath))
         {
-            return m_uiDic[_panelPath];
+            t_base = m_uiDic[_panelPath];
+            if (t_base == null)
+            {
+                m_uiDic.Remove(_panelPath);
+            }
+            else
+            {
+                return m_uiDic[_panelPath];
+            }
         }
 
-        UIBase t_base = Resources.Load<UIBase>(_panelPath);
+        t_base = Resources.Load<UIBase>(_panelPath);
         if (t_base != null)
         {
             t_base = Instantiate<UIBase>(t_base);
@@ -64,6 +76,36 @@ public class UIManager : MonoBehaviour {
             Debug.LogError("\"" + _panelPath+"\" is null");
 
         return t_base;
+    }
+
+    public UIBase ClosePanel(string _panelPath)
+    {
+        UIBase t_base = null;
+        if (m_uiDic.ContainsKey(_panelPath))
+        {
+            t_base = m_uiDic[_panelPath];
+            if (t_base == null)
+            {
+                m_uiDic.Remove(_panelPath);
+            }
+            else
+            {
+                t_base.Hide();
+            }
+        }
+        return t_base;
+    }
+
+    public static void ClearAllUI()
+    {
+        List<UIBase> t_list = new List<UIBase>(m_uiDic.Values);
+        for (int i = 0; i < t_list.Count; i++)
+        {
+            Destroy(t_list[i].gameObject);
+        }
+        t_list.Clear();
+        m_uiDic.Clear();
+        UICurrentSiblineIndex = 0;
     }
 
 }

@@ -58,5 +58,6 @@ MonoBehaviour:
   - SceneName: TestInject
     Prefabs:
     - {fileID: 1329014333990838, guid: c569b22f66af66f4f8f11905df9f201a, type: 2}
-  - SceneName: TestUIManager
-    Prefabs: []
+  - SceneName: TestLaunch
+    Prefabs:
+    - {fileID: 1005963008566572, guid: b5653456c601d324e90f37fda0a3c7ea, type: 2}
