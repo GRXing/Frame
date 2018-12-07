@@ -10,6 +10,11 @@ public class GameSceneManager : MonoBehaviour {
     [SerializeField]
     ScenePrefabs[] m_scenePrefabs;
 
+    public string CurrentSceneName
+    {
+        get { return SceneManager.GetActiveScene().name; }
+    }
+
     void Awake()
     {
         Instance = this;
@@ -23,10 +28,9 @@ public class GameSceneManager : MonoBehaviour {
 
     void Load()
     {
-        string t_sceneName = SceneManager.GetActiveScene().name;
         for (int i = 0; i < m_scenePrefabs.Length; i++)
         {
-            if (t_sceneName.Equals(m_scenePrefabs[i].SceneName))
+            if (CurrentSceneName.Equals(m_scenePrefabs[i].SceneName))
             {
                 for (int m = 0; m < m_scenePrefabs[i].Prefabs.Length; m++)
                 {

@@ -36,7 +36,6 @@ public class UIManager : MonoBehaviour {
 
     void Awake()
     {
-        UICurrentSiblineIndex = 0;
         Instance = this;
     }
 
