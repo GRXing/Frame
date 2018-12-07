@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1887612241879768}
+  m_RootGameObject: {fileID: 1431763551068900}
   m_IsPrefabParent: 1
---- !u!1 &1887612241879768
+--- !u!1 &1431763551068900
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4580359594286418}
-  - component: {fileID: 114111340465001488}
+  - component: {fileID: 4938571716485082}
+  - component: {fileID: 114513167694209942}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameDataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4580359594286418
+--- !u!4 &4938571716485082
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1887612241879768}
+  m_GameObject: {fileID: 1431763551068900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,18 +40,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114111340465001488
+--- !u!114 &114513167694209942
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1887612241879768}
+  m_GameObject: {fileID: 1431763551068900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c608f506d7bc58948a39ecc9d86ea5eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 305a4fa3393fb4a4f8bc364ca0233f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_managerPrefabs:
-  - {fileID: 1413266028377318, guid: 1a995c7c0b4aed0418606c7f4a631e0b, type: 2}
-  - {fileID: 1411460937458916, guid: 96ac69f08ab91e84db0ce0800cc01028, type: 2}
-  - {fileID: 1431763551068900, guid: 613d5b43557d2d24c8db58520939fd58, type: 2}

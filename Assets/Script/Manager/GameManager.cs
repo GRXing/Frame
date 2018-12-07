@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
     {
         EventManager.ClearAllRegister();
         UIManager.ClearAllUI();
+        GameDataManager.Instance.ResetAllData();
     }
 
 }
