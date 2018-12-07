@@ -54,6 +54,9 @@ public class GameDataManager : MonoBehaviour {
     {
         m_saveDataHash[_key] = _value;
         SaveGameManager.SaveData(m_saveDataHash);
+#if UNITY_EDITOR
+        Debug.Log("save key: " + _key + " value: " + _value);
+#endif
     }
 
     public void LoadSaveData(Hashtable _hash)
@@ -67,6 +70,9 @@ public class GameDataManager : MonoBehaviour {
             m_gameData.TestDataBool = _hash.GetBool("TestDataBool");
         if (_hash.GetString("TestDataString") != null)
             m_gameData.TestDataString = _hash.GetString("TestDataString");
+        Debug.LogError("TestDataInt: " + m_gameData.TestDataInt);
+        Debug.LogError("TestDataBool: " + m_gameData.TestDataBool);
+        Debug.LogError("TestDataString: " + m_gameData.TestDataString);
 #endif
     }
 

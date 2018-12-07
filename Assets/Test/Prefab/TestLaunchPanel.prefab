@@ -94,7 +94,7 @@ MonoBehaviour:
     \t\u6253\u5F00\u6D4B\u8BD5UI4\r\n\"B\" \t\u6253\u5F00\u6D4B\u8BD5UI5\r\n\"Q\"
     \t\u5173\u95ED\u6D4B\u8BD5UI1\r\n\"W\" \t\u5173\u95ED\u6D4B\u8BD5UI2\r\n\"E\"
     \t\u5173\u95ED\u6D4B\u8BD5UI3\r\n\"R\" \t\u5173\u95ED\u6D4B\u8BD5UI4\r\n\"T\"
-    \t\u5173\u95ED\u6D4B\u8BD5UI5"
+    \t\u5173\u95ED\u6D4B\u8BD5UI5\r\n\"123\"\t\u6D4B\u8BD5\u6570\u636E\u4FDD\u5B58\t"
 --- !u!222 &222225942550984454
 CanvasRenderer:
   m_ObjectHideFlags: 1

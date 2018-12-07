@@ -106,6 +106,18 @@ public class GameSceneManager : MonoBehaviour {
         {
             UIManager.Instance.ClosePanel(UIPath.TestPanel5);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GameDataManager.Instance.TestDataBool = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            GameDataManager.Instance.TestDataInt = 10086;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            GameDataManager.Instance.TestDataString = "test save data";
+        }
     }
 #endif
 }
