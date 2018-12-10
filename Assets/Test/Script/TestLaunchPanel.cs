@@ -4,4 +4,9 @@ using UnityEngine;
 
 public class TestLaunchPanel : UIBase {
 
+    protected override void OnDestroy()
+    {
+        
+    }
+
 }

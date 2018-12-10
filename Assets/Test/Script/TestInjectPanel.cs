@@ -14,4 +14,9 @@ public class TestInjectPanel : UIBase {
     {
         
     }
+
+    protected override void OnDestroy()
+    {
+        
+    }
 }

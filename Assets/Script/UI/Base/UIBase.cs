@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Reflection;
 
-public class UIBase : MonoBehaviour {
+public abstract class UIBase : MonoBehaviour {
 
     public void Inject()
     {
@@ -43,5 +43,10 @@ public class UIBase : MonoBehaviour {
         if (this.gameObject.activeSelf)
             this.gameObject.SetActive(false);
     }
+
+    /// <summary>
+    /// 注册过事件请在此函数注销事件
+    /// </summary>
+    protected abstract void OnDestroy();
 
 }

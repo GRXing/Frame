@@ -8,9 +8,11 @@ using System.Text;
 /// </summary>
 public class SaveGameManager {
 
+    public const string SaveDataName = "SaveData.save";
+
     private static string PersistentDataPath
     {
-        get{ return Path.Combine(Application.persistentDataPath, "SaveData.json");}
+        get { return Path.Combine(Application.persistentDataPath, SaveDataName); }
     }
 
     public static void SaveData(Hashtable _hash)
@@ -39,7 +41,7 @@ public class SaveGameManager {
     {
         if (!File.Exists(PersistentDataPath))
         {
-            Debug.Log("cannot load save data, file doesn't exist: " + PersistentDataPath);
+            Debug.Log("cannot find save data");
             return;
         }
         LoadLocal(PersistentDataPath);

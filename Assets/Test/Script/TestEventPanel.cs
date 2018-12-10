@@ -52,4 +52,10 @@ public class TestEventPanel : UIBase{
         //EventManager.RemoveAllEvent(EventKey.TestRegisterOne);
         //EventManager.ClearAllRegister();
     }
+
+    protected override void OnDestroy()
+    {
+        EventManager.RemoveEvent(EventKey.TestRegisterOne, TestOneCallback);
+        EventManager.RemoveEvent(EventKey.TestRegisterOne, TestTwoCallback);
+    }
 }

@@ -10,4 +10,9 @@ public class TestUIManagerPanel : UIBase {
     {
         Text.text = _msg;
     }
+
+    protected override void OnDestroy()
+    {
+        
+    }
 }
